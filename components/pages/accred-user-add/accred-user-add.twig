@@ -1,0 +1,56 @@
+{% set isSpecial = true %}
+{% extends "@templates/base/base.twig" %}
+{% block header %}
+{% include '@organisms/header/header-light.twig' with { site_title: 'Accred', header: header_accred } %}
+{% endblock %}
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
+</div>
+{% endblock %}
+{% block content %}
+<div class="container-full py-4">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <h1>Ajouter une personne sur SCIPER</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="p-4 border mt-3">  
+          <form>
+            <div class="form-group row">
+              <label for="last-name" class="col-sm-3 col-form-label">Nom</label>
+              <div class="col-sm-5">
+                {% include '@atoms/input/input.twig' %}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="first-name" class="col-sm-3 col-form-label">Prénom</label>
+              <div class="col-sm-5">
+                {% include '@atoms/input/input.twig' %}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="sicper-number" class="col-sm-3 col-form-label">Date de naissance</label>
+              <div class="col-sm-5">
+                <input type="date" name="date-of-birth" class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="sicper-number" class="col-sm-3 col-form-label">Genre</label>
+              <div class="col-sm-5">
+                {% include '@atoms/dropdown/dropdown.twig' %}
+              </div>
+            </div>
+            <div class="mt-4">
+              {% include '@atoms/button/button.twig' %}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

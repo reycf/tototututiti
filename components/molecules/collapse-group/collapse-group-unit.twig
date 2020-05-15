@@ -1,0 +1,215 @@
+<button class="collapse-title collapse-title-desktop" type="button" data-toggle="collapse" data-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+  <span class="text-primary"><span class="mr-1">{% include "@atoms/icon/icon.twig" with { icon: 'icon-ellipse' } %}</span>EXAPP</span>
+</button>
+<div class="collapse collapse-item collapse-item-desktop mb-5" id="collapse-1">
+  <div class="row pt-3 pb-2">
+    <div class="col-md-3">
+      <strong itemprop="name">Statut</strong><br />
+    </div>
+    <div class="col-md-9">
+      <div class="row mb-2">
+        <div class="col-md-8">
+          Hôte
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-8">
+          Classe : Personnel scientifique
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-8">
+         Fonction: Informaticien
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          Echéance: 31.12.2019
+        </div>
+        <div class="col-6 text-right">
+          <a href="#" class="link-pretty" data-toggle="modal" data-target="#modifyModal">Prolonger</a>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <a href="#" class="link-pretty">Modifier le statut</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="mt-4">
+  <div class="row pt-3 pb-2">
+    <div class="col-md-3">
+      <strong itemprop="name">Rôles</strong><br />
+    </div>
+    <div class="col-md-9">
+      <div class="row mb-2">
+        <div class="col-6">
+          <p class="m-0">Responsable communication</p>
+        </div>
+        <div class="col-6 text-right">
+          <a href="#" class="link-pretty" data-toggle="modal" data-target="#delegateModal">Définir suppléance</a>
+          <a href="#" class="ml-4">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <p class="m-0"><a href="#" class="link-pretty link-select" input-target="#newRoleSelect">Attribuer un nouveau rôle</a></p>
+          {% include "@atoms/select/select-search.twig" with { id: 'newRoleSelect', label: false } %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="mt-4">
+  <div class="row pt-3 pb-2">
+    <div class="col-md-3">
+      <strong itemprop="name">Droits</strong><br />
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-6">
+          <p class="mb-1"><span data-toggle="tooltip" data-html="true" title="<div class='text-left'>Attribution des rôles dans les unités organisationnelles. Ce droit ne permet pas d’attribuer des rôles dans les centres financiers</div>">Accréditation</span></p>
+        </div>
+        <div class="col-6 text-right">
+          <a href="#" class="link-pretty" data-toggle="modal" data-target="#replacementModal">Voir suppléance</a>
+          <a href="#" class="ml-4">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-6">
+          <p class="m-0">Attribution des rôles</p>
+        </div>
+        <div class="col-6 text-right">
+          <a href="#" class="link-pretty" data-toggle="modal" data-target="#replacementModal">Voir suppléance</a>
+          <a href="#" class="ml-4">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <p class="m-0"><a href="#" class="link-pretty">Voir les droits hérités</a></p>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <p class="m-0"><a href="#" class="link-pretty link-select" input-target="#newRightSelect">Attribuer un nouveau droit</a></a></p>
+          {% include "@atoms/select/select-search.twig" with { id: 'newRightSelect', label: false } %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="mt-4">
+  <div class="row pt-3 pb-2">
+    <div class="col-md-3">
+      <strong itemprop="name">Commentaire</strong>
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="mb-1"><em class="text-muted">Pas de commentaire</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button class="collapse-title collapse-title-desktop" type="button" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+  <span class="text-primary"><span class="mr-1">{% include "@atoms/icon/icon.twig" with { icon: 'icon-ellipse' } %}</span>SI-GOUV-GE</span>
+</button>
+<button class="collapse-title collapse-title-desktop" type="button" data-toggle="collapse" data-target="#collapse-2" aria-expanded="false" aria-controls="collapse-3">
+  <span class="text-primary"><span class="mr-1">{% include "@atoms/icon/icon.twig" with { icon: 'icon-ellipse' } %}</span>CDH</span>
+</button>
+<button class="collapse-title collapse-title-desktop" type="button" data-toggle="collapse" data-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+  <span class="text-primary"><span class="mr-1">{% include "@atoms/icon/icon.twig" with { icon: 'icon-ellipse' } %}</span>CF 24000</span>
+</button>
+
+<!-- Modify Modal -->
+<div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="modifyModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modifier l'échéance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group row">
+            <label for="last-name" class="col-sm-6 col-form-label">Unité</label>
+            <div class="col-sm-6">
+              EXAPP
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="last-name" class="col-sm-6 col-form-label">Statut</label>
+            <div class="col-sm-6">
+              Hôte
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="last-name" class="col-sm-6 col-form-label">Echéance</label>
+            <div class="col-sm-6">
+              <input class="form-control" type="date">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary">Valider la nouvelle échéance</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Replacement Modal -->
+<div class="modal fade" id="replacementModal" tabindex="-1" role="dialog" aria-labelledby="replacementModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Suppléance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div for="last-name" class="col-sm-4">Rôle</div>
+          <div class="col-sm-8">
+            Responsable communication
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div for="last-name" class="col-sm-4">Suppléant</div>
+          <div class="col-sm-8">
+            116080<br />Madame Natalie Meystre<br />née le 01.05.1968
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div for="last-name" class="col-sm-4">Périodes</div>
+          <div class="col-sm-8">
+            Absences
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary">Supprimer la délégation</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Delegate Modal -->
+<div class="modal fade" id="delegateModal" tabindex="-1" role="dialog" aria-labelledby="delegateModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Déleguer rôle à un suppléant</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% include '@organisms/user-search/user-search.twig' with { isModal: true } %}
+      </div>
+    </div>
+  </div>
+</div>

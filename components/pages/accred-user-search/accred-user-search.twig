@@ -1,0 +1,22 @@
+{% set isSpecial = true %}
+{% extends "@templates/base/base.twig" %}
+{% block header %}
+{% include '@organisms/header/header-light.twig' with { site_title: 'Accred', header: header_accred } %}
+{% endblock %}
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
+</div>
+{% endblock %}
+{% block content %}
+<div class="container-full py-4">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <h1>Rechercher une personne</h1>
+      </div>
+    </div>
+    {% include '@organisms/user-search/user-search.twig' %}
+  </div>
+</div>
+{% endblock %}

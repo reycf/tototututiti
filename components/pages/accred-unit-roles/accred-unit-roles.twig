@@ -1,0 +1,70 @@
+{% set isSpecial = false %}
+{% extends "@templates/base/base.twig" %}
+{% set nav_aside_items = [{label: "Rôles"},{label: "Droits"},{label: "Accréditations"},{label: "Sous-unités"},{label: "Historique des accréditations"},{label: "<svg class='icon'><use xlink:href='#icon-download'></use></svg> Télécharger toutes les données (XLS)"}] %}
+{% set nav_aside_active = 0 %}
+
+{% block header %}
+{% include '@organisms/header/header-light.twig' with { site_title: 'Accred', header: header_accred } %}
+{% endblock %}
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
+</div>
+{% endblock %}
+{% block content %}
+<div class="container-full py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Rôles SMAT</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 py-4">
+            <table class="table table-hover my-4">
+              <thead>
+                <tr>
+                  <th scope="col"><h4>Rôle</h4>
+                  </th>
+                  <th scope="col"><h4>Personne</h4>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="py-3"><strong>Gestion des accréditations</strong></td>
+                  <td class="py-3">Renggli Loris</td>
+                </tr>
+                <tr>
+                  <td class="py-3 align-top"><strong>Responsable administratif</strong></td>
+                  <td class="py-3">
+                    <div class="mb-2">Bühlmann Yolanda<a href="#" class="float-right">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a></div>
+                    <div class="mb-2">Renggli Loris<a href="#" class="float-right">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a></div>
+                    <div class="mb-2">Testa Andrea<a href="#" class="float-right">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a></div>
+                    <div><a class="nav-link px-0" href="#">Ajouter un responsable administratif</a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-3 align-top"><strong>Responsable communication</strong></td>
+                  <td class="py-3">
+                    <div class="mb-2">Bühlmann Yolanda<a href="#" class="float-right">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a></div>
+                    <div class="mb-2">Renggli Loris<a href="#" class="float-right">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a></div>
+                    <div class="mb-2">Testa Andrea<a href="#" class="float-right">{% include "@atoms/icon/icon.twig" with { icon: 'icon-close' } %}</a></div>
+                    <div><a class="nav-link px-0" href="#">Ajouter un responsable communication</a></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-3 align-top">{% include "@atoms/icon/icon.twig" with { icon: 'icon-chevron-right' } %}<a href="#"><strong>Ajouter un rôle</strong></a></td>
+                  <td class="py-3"></td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="list-inline text-right">
+               <li class="list-inline-item"><a class="pretty-link" href="#">Voir les rôles hérités</a></li>
+               <li class="list-inline-item"><a class="pretty-link" href="#">Télécharger (CSV)</a></li>
+            </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

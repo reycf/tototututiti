@@ -1,0 +1,11 @@
+<div class="form-group select-search">
+	{% if label %}<label>Choisir un rôle {% endif %}</label>
+	<select class="select-search-link" id="{{ id ? id }}">
+		<option value="" disabled selected>Liste des rôles</option>
+		<option value="http://www.epfl.ch">Voir tous les droits (Lien externe)</option>
+		<option value="responsable-administratif">Responsable administratif</option>
+		<option value="responsable-informatique">Responsable informatique</option>
+		<option value="responsable-infrastructure">Responsable infrastructure</option>
+		<option value="responsable-communication">Responsable communication</option>
+	</select>
+</div>

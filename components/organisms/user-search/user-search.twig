@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="p-4 {% if not isModal %}border mt-3{% endif %}">
+      <h3 class="mb-4">Rechercher</h3>
+      <form>
+        <div class="form-group row">
+          <label for="last-name" class="col-sm-3 col-form-label">Nom</label>
+          <div class="col-sm-5">
+            {% include '@atoms/input/input.twig' %}
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="first-name" class="col-sm-3 col-form-label">Prénom</label>
+          <div class="col-sm-5">
+            {% include '@atoms/input/input.twig' %}
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sicper-number" class="col-sm-3 col-form-label">N° SCIPER</label>
+          <div class="col-sm-5">
+            {% include '@atoms/input/input.twig' %}
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sicper-number" class="col-sm-3 col-form-label">Date de naissance</label>
+          <div class="col-sm-5">
+            <input type="date" name="date-of-birth" class="form-control">
+          </div>
+        </div>
+        <div class="mt-4">
+          {% include '@atoms/button/button.twig' %}
+        </div>
+      </form>
+      <hr class="my-4">
+      <h4 class="mb-4">Résultats</h4>
+
+      <div class="contact-list">
+      {% for i in 1..9 %}
+        <div class="contact-list-row" itemscope itemtype="http://schema.org/Person">
+          <div class="contact-list-avatar contact-list-avatar-placeholder" itemprop="image">
+            <img src="svg/avatar-placeholder.svg">
+          </div>
+          <a href="#" class="contact-list-item" itemprop="name">John Doe</a>
+          <p class="contact-list-item m-0 text-muted" itemprop="jobTitle">Student class coordinator</p>
+          <a class="contact-list-item text-muted" href="#" itemprop="email">john.doe@epfl.ch</a>
+          <a class="contact-list-item text-muted" href="#" itemprop="telephone">+41 21 69 <b>36054</b></a>
+          <a class="contact-list-item text-muted" href="#" itemprop="workLocation">CM1245</a>
+        </div>
+      {% endfor %}
+      </div>
+      {% if not isModal %}
+      <ul class="list-inline text-right mt-4">
+         <li class="list-inline-item"><a class="pretty-link" href="#">Ajouter une personne dans SCIPER</a></li>
+         <li class="list-inline-item">{% include '@atoms/button/button-secondary.twig' %}</li>
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>

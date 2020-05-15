@@ -1,0 +1,67 @@
+{% set isSpecial = true %}
+{% extends "@templates/base/base.twig" %}
+{% block header %}
+{% include '@organisms/header/header-light.twig' with { site_title: 'Accred', header: header_accred } %}
+{% endblock %}
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
+</div>
+{% endblock %}
+{% block content %}
+<div class="container-full py-4">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <h1>Unités</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-4">
+          <h5 id="links-group-title">Vos unités</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="/pages/accred-unit-roles" class="link-icon">
+              SMAT {% include "@atoms/icon/icon.twig" with { icon: 'icon-arrow-right' } %}
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="link-icon">
+              CHD {% include "@atoms/icon/icon.twig" with { icon: 'icon-arrow-right' } %}
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="link-icon">
+              SB {% include "@atoms/icon/icon.twig" with { icon: 'icon-arrow-right' } %}
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#" class="link-icon">
+              SV {% include "@atoms/icon/icon.twig" with { icon: 'icon-arrow-right' } %}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="links-group links-group-teaser bg-gray-100">
+          <h5 id="links-group-title">Rechercher une unité</h5>
+          <nav class="nav flex-column flex-wrap align-items-start" role="navigation" aria-labelledby="links-group-title">
+            <form class="w-100">
+              <div class="unit-search-wrapper form-group mt-2">
+                <div class="input-group input-group-inner-space mb-3">
+                  <input type="text" id="unit-search" class="form-control" placeholder="Unité">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">Rechercher</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

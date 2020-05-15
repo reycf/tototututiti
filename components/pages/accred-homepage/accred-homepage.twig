@@ -1,0 +1,44 @@
+{% set isSpecial = true %}
+{% extends "@templates/base/base.twig" %}
+{% block header %}
+{% include '@organisms/header/header-light.twig' with { site_title: 'Accred', header: header_accred } %}
+{% endblock %}
+{% block breadcrumb %}
+<div class="breadcrumb-container">
+  {% include '@molecules/breadcrumb/breadcrumb.twig' %}
+</div>
+{% endblock %}
+{% block content %}
+<div class="container-full py-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <h1>Accred</h1>
+        <p>Gestion des droits d’accès aux ressources de l’EPFL</p>
+        <p><a href="https://accreditation.epfl.ch/a-propos/">En savoir plus</a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="links-group links-group-teaser mb-4">
+          <h5 id="links-group-title">Gérer et auditer</h5>
+          <nav class="nav flex-column flex-wrap align-items-start" role="navigation" aria-labelledby="links-group-title">
+            <a class="nav-link link-pretty" href="/pages/accred-user">Ses propres accréditations (Xavier Alexandre)</a>
+            <a class="nav-link link-pretty" href="/pages/accred-user-search">Les accréditations d'une autre personne</a>
+            <a class="nav-link link-pretty" href="/pages/accred-unit-search">Les accréditations et signatures associées à une unité</a>
+          </nav>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="links-group links-group-teaser">
+          <h5 id="links-group-title">Suivi des demandes en cours</h5>
+          <nav class="nav flex-column flex-wrap align-items-start" role="navigation" aria-labelledby="links-group-title">
+            <p><em class="text-muted">Pas de demandes pour l'instant</em></p>
+            <a class="nav-link link-pretty" href="#">Historique</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
